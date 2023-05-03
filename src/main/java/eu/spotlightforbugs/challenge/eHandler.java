@@ -24,7 +24,8 @@ public class eHandler implements Listener {
         for (int i = x - 2; i <= x + 2; i++) {
             for (int j = z - 2; j <= z + 2; j++) {
                 if (world.getBlockAt(i, y, j).getType() == Material.AIR) {
-                    world.getBlockAt(i, y, j).setType(Material.FIRE);
+                    if (!(loc.getX() == (i)) && !(loc.getZ() == (j)))
+                        world.getBlockAt(i, y, j).setType(Material.FIRE);
                 }
             }
         }
