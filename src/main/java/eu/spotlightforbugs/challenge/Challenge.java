@@ -8,6 +8,16 @@ public final class Challenge extends JavaPlugin {
     public void onEnable() {
         // register the event listener inside the eHandler class
         getServer().getPluginManager().registerEvents(new eHandler(), this);
+        //add a basic fly command to the plugin
+        this.getCommand("fly").setExecutor(new flyCommand());
+        //in the plugin.yml:
+        //commands:
+        //  fly:
+        //    description: "Allows you to fly"
+        //    usage: /fly
+        //    permission: fly.use
+        //    permission-message: "You do not have permission to use this command"
+        //    aliases: [flight, flymode,bird]
 
     }
 

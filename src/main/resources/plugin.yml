@@ -2,3 +2,15 @@ name: challenge
 version: '${project.version}'
 main: eu.spotlightforbugs.challenge.Challenge
 api-version: 1.19
+commands:
+  fly:
+    description: Fly command
+    usage: /fly
+    permission: challenge.fly
+    aliases: [flight, flymode,bird]
+
+
+permissions:
+  challenge.fly:
+    description: Allows you to fly
+    default: true # You can fly by default
