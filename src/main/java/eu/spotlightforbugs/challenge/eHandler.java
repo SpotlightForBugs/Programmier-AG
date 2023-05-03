@@ -45,7 +45,8 @@ public class eHandler implements Listener {
         if (event.getEntity() instanceof Player) {
             if (event.getCause() == EntityDamageEvent.DamageCause.FIRE || event.getCause() == EntityDamageEvent.DamageCause.FIRE_TICK) {
                 event.setCancelled(true);
-                ((Player) event.getEntity()).setHealth(0);
+                Player player = (Player) event.getEntity();
+                player.setHealth(0);
             }
         }
     }
