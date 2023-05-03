@@ -23,7 +23,9 @@ public class eHandler implements Listener {
         int z = loc.getBlockZ();
         for (int i = x - 2; i <= x + 2; i++) {
             for (int j = z - 2; j <= z + 2; j++) {
-                world.getBlockAt(i, y, j).setType(Material.FIRE);
+                if (world.getBlockAt(i, y, j).getType() == Material.AIR) {
+                    world.getBlockAt(i, y, j).setType(Material.FIRE);
+                }
             }
         }
         Bukkit.getScheduler().scheduleSyncDelayedTask(Challenge.getPlugin(Challenge.class), new Runnable() {
