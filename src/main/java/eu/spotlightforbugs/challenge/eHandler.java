@@ -24,7 +24,12 @@ public class eHandler implements Listener {
         for (int i = x - 2; i <= x + 2; i++) {
             for (int j = z - 2; j <= z + 2; j++) {
                 if (world.getBlockAt(i, y, j).getType() == Material.AIR) {
-                    if (!(loc.getX() == (i)) && !(loc.getZ() == (j)))
+
+
+                    if (i == x && j == z) {
+                        continue;
+
+                    } else{
                         world.getBlockAt(i, y, j).setType(Material.FIRE);
                 }
             }
@@ -40,7 +45,7 @@ public class eHandler implements Listener {
                 }
             }
         }, 100L); // 5 seconds
-    }
+    } }
 
     //if a player gets damaged by fire, they will die. Only applies to players
     @EventHandler
