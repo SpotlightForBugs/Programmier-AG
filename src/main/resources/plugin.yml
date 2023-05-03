@@ -1,0 +1,4 @@
+name: challenge
+version: '${project.version}'
+main: eu.spotlightforbugs.challenge.Challenge
+api-version: 1.19
